@@ -1,38 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+    margin-top: 10px;
+    font-size: 32px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.subtitle {
+    font-size: 18px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tasks {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 10px;
+    list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.no-task {
+    font-size: 24px;
+    margin: 36px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#task-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-task, #add-task {
+    width: 100%;
+    font-size: 18px;
+    padding: 5px 10px;
+    margin: 5px 0;
+}
+
+#add-task {
+    cursor: pointer;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px 20px;
+    box-shadow: 
+    0 1px 2px rgba(0,0,0,0.07), 
+    0 2px 4px rgba(0,0,0,0.07), 
+    0 4px 8px rgba(0,0,0,0.07);
+    border-radius: 5px;
+    min-height: 50px;
+}
+
+.task-title {
+    font-size: 20px;
+}
+
+.task-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.error-message {
+    margin: 5px 0;
+    color: red;
+}
+
+.error-hidden {
+    visibility: hidden;
+}
+
+.error-visible {
+    visibility: visible;
 }
