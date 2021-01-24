@@ -4,11 +4,11 @@ import './Tasks';
 import Tasks from './Tasks';
 
 function App() {
-  function useStickyState(defaultValue, key) {
+  function usePersistentState(defaultValue, key) {
     const [value, setValue] = useState(() => {
-      const stickyValue = window.localStorage.getItem(key);
-      return stickyValue !== null
-        ? JSON.parse(stickyValue)
+      const persistentValue = window.localStorage.getItem(key);
+      return persistentValue !== null
+        ? JSON.parse(persistentValue)
         : defaultValue;
     });
     useEffect(() => {
@@ -17,7 +17,7 @@ function App() {
     return [value, setValue];
   }
 
-  const [tasks, setTasks] = useStickyState([]);
+  const [tasks, setTasks] = usePersistentState([]);
   const [showError, setShowError] = useState(false);
 
   useEffect(() => {
