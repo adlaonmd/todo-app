@@ -11,7 +11,6 @@ const Tasks = (props) => {
                         <small>{ months[task.date.month] + " " + task.date.day + ", " + task.date.year }</small>
                         </div>
                         <button id={task.id} type="button" className="delete-button" onClick={() => props.deleteItem(task.id)}>&#10006;</button>
-                        
                     </li>
                 );
             }) }
