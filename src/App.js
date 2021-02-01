@@ -31,7 +31,7 @@ function App() {
 
     if (new_task.value !== "") {
       const date = new Date();
-      setTasks(tasks => ([...tasks, { title: new_task.value, id: Date.now(), date: {month: date.getMonth(), day: date.getDate(), year: date.getFullYear()}}]));
+      setTasks(tasks => ([...tasks, { title: new_task.value, id: Date.now(), date_created: {month: date.getMonth(), day: date.getDate(), year: date.getFullYear()} }]));
       setShowError(false);
     }
     else setShowError(true);
