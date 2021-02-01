@@ -30,7 +30,8 @@ function App() {
     const new_task = e.target.querySelector("#new-task");
 
     if (new_task.value !== "") {
-      setTasks(tasks => ([...tasks, { title: new_task.value, id: Date.now() }]));
+      const date = new Date();
+      setTasks(tasks => ([...tasks, { title: new_task.value, id: Date.now(), date: {month: date.getMonth(), day: date.getDate(), year: date.getFullYear()}}]));
       setShowError(false);
     }
     else setShowError(true);

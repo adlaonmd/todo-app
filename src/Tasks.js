@@ -4,12 +4,11 @@ const Tasks = (props) => {
     return ( 
         <ul className="tasks">
             { props.tasks.map((task) => {
-                const date = new Date();
                 return (
                     <li key={task.id}>
                         <div className="task-details">
                         <p className="task-title">{task.title}</p>
-                        <small>{ months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear() }</small>
+                        <small>{ months[task.date.month] + " " + task.date.day + ", " + task.date.year }</small>
                         </div>
                         <button id={task.id} type="button" className="delete-button" onClick={() => props.deleteItem(task.id)}>&#10006;</button>
                         
